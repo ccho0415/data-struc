@@ -1,0 +1,333 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Week 1</title>
+	<link rel="stylesheet" href="styles/monokai-sublime.css">
+	<script src="highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+	<h3>What is a data structure?</h3>
+		<p>A data structure is a way of organizing information</p>
+	<h3>What is an algorithm?</h3>
+		<p>An algorithm is a sequence of steps that is performed on a data structure in order to solve certain tasks</p>	
+	<h3>Basic Data Structures</h3>
+		<li>Array</li>
+			<ul>A data structure that contains a contiguous set of elements where you only need to know the location of the initial element location in order to find the entire structure</ul>
+			<li>Types of Searches for Array</li>
+				<li>Unsorted</li>
+					<ul>Linear/Sequential Search : O(n)</ul>
+				<li>Sorted</li>
+					<ul>Binary Search : O(lg(n))</ul>	
+		<li>Array List</li>
+			<ul>A class that wraps around an Array that allows you to use methods to resize, change and grow the array as needed</ul>
+			<h4>Example for Array List</h4>
+			<pre>
+				<code class ="java">
+	ArrayList<AnyType> myArray = new ArrayList<Integer>();
+				</code>				
+			</pre>
+
+			<br><br>
+		<li>Linked List</li>
+			<ul>A data structure that has a node with data, and a reference to the next element of the list(singly) or a reference to the next and previous elements of the list (doubly) </ul>	
+	<h3>Generics</h3>
+	<h3>Interfaces</h3>
+		<li>A set of operations.</li>
+		<li>An interface can extend other interfaces. (Whatever the super class has the subclass will also have)</li>
+	<h3>Recursion</h3>
+		<h4>The Four Rules</h4>
+			<li>There must be a base case. A case that acts as a terminating condition</li>
+			<li>Each time you call the function, you must be making progress towards that base case </li>
+			<li>Assume that the recursive call works.</li>
+			<li>Do not repeat work. (Compound Interest Rule) </li>
+	<h3>Proof By Induction</h3>		
+	<h3>Big O Analysis</h3>	
+		<h4>What is it?</h4>	
+			<ul>Allows for the abstraction of an algorithm regardless of hardware or types of data for the purposes of analysis</ul>
+			<ul>T(N) = O(f(N)) such that there exists some constants c and n<sub>0</sub> where T(N) is ≤ C(f(N)) for all n ≥ n<sub>0</sub>. This is an upperbound</ul>
+		<h4>What is the best metric for measure algorithms and runtimes?</h4>
+			<ul>Average Case</ul>
+		<h4>What type of analysis are we doing?</h4>	
+			<ul>Asymptotic</ul>	
+		<h4>Table of Big O Relative Speeds</h4>
+		<table>
+			<thead>
+				<tr>
+					<th>n</th>
+					<th>description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>c</td>
+					<td>order of O(n)</td>
+				</tr>
+				<tr>
+					<td>log<sub>n</sub></td>
+					<td>order of log of n</td>
+				</tr>
+				<tr>
+					<td>log<sup>2</sup>(n)</td>
+					<td>log squared n</td>
+				</tr>
+				<tr>
+					<td>n</td>
+					<td>linear algorithm</td>
+				</tr>
+				<tr>
+					<td>n log(n)</td>
+					<td>n times log of n</td>
+				</tr>
+				<tr>
+					<td>n<sup>2</sup></td>
+					<td>polynomial</td>
+				</tr>
+				<tr>
+					<td>n<sup>3</sup></td>
+					<td>cubic</td>
+				</tr>
+				<tr>
+					<td>n<sup>k</sup></td>
+					<td>etc</td>
+				</tr>
+				<tr>
+					<td>2<sup>n</sup></td>
+					<td>exponential algorithm</td>
+				</tr>
+				<tr>
+					<td>n!</td>
+					<td>Factorial</td>
+				</tr>
+				</tbody>
+			</table>		
+	<h3>Big Ω</h3>
+		<h4>What is it?</h4>
+			<ul>T(N) = Ω(g(N)) such that there exists some constants c and n<sub>0</sub> where T(N) ≥ c(g(N)) for all n ≥ n<sub>0</sub>. This is a lower bound.</ul>	
+	<h3>Big Θ</h3>
+		<h4>What is it?</h4>
+			<ul>T(N) = Θ(h(N)) if T(N) = Θ(h(N)) and T(N) = Ω(h(N)). The tightest bound possible.</ul>	
+	<h3>Algorithm Analysis</h3>
+		<li>If T<sub>1</sub>(N) is the of the first algorithm and T<sub>2</sub>(N) is the cost of the second algorithm, then T<sub>1</sub>(N) + T<sub>2</sub>(N) = O(f(N)+g(N)) </li>	
+		<li>If T(N) is a polynomial degree k, then T(N) = Θ(n<sup>k</sup>) </li>	
+		<li>log<sup>k</sup>(N) = O(N)</li>	
+	<h3>Abstract Data Type (ADT)</h3>	
+		<h4>Collections</h4>
+
+		<h4>Lists</h4>
+			<li>A collection of data that has some order.</li>
+			<li>Intrinsic Behvaiors: </li>
+		<h4>ArrayList</h4>
+			<li>A class that implements the list interface.</li>
+			<li>Information Needed:</li>
+				<li>Array</li>
+				<li>The Length of the Array</li>
+			<li>When we’re adding items to an ArrayList, we’re just filling up an array data type. But when we need to resize the initial array, we’ll get hit with an order of n penalty, because we’ll have to resize the array to accomodate the new element.</li>	
+			<li>Adds are always expensive for arrayLists because you’ll have to insert the new element somewhere, then copy over all the old elements. This is the of the order of n for the cost of work.</li>
+			<li>searching for an element in an ArrayList would always be Big-O(1), but inserting is always an expensive operation (especially if inserting at the beginning of the ArrayList)</li>
+		<h4>Singly Linked List</h4>
+			<li>a singly linked list is built out of node objects</li>
+			<li>A node has 2 fields</li>
+				<li>Data</li>
+				<li>Pointer</li>
+				<code>java LLNode<AnyType> { AnyType data; LLNode<AnyType> next; }</code>	
+			<li>having a reference to the first node will provide a reference to every other node in the linked list</li>	
+			<li>placing an object at the end of the list would be Big-O(n), since we only have the reference to the first object</li>
+			<li>placing an object at the front of the list would just be Big-O(1)</li>
+			<li>searching or setting would have a worst case scenario of Big-O(n)</li>
+			<li>inserting into a linked list during interations would have a Big-O(1) based on where the iterator is</li>
+		<h4>Doubly Linked List</h4>
+			<li>a doubly linked list is built out of node objects</li>
+			<li>A node has 3 fields</li>
+				<li>Data</li>
+				<li>Next Pointer</li>
+				<li>Previous Pointer </li>
+				<code>java LLNode<AnyType> { AnyType data; LLNode<AnyType> next; LLNode<AnyType> prev; }</code>	
+			<li>Since you can move in both directions, there is a reference to both the first and last elements of the list</li>	
+			<li>the first and last nodes of a doubly linked list don’t actually store data (as sentinel nodes) and are the only references stores</li>
+	<h3>Code Examples</h3>
+		<h4>Binary Search Generics</h4>
+		<pre>
+			<code class ="java">
+public class BinarySearchGenerics {
+
+    /**
+     * Perform binary search. 
+     * @param a the array to be searched
+     * @param x the key to search for
+     * @return if found: index of the key in a, otherwise -1
+     */
+    public static <AnyType extends Comparable<AnyType>> 
+      int binarySearch(AnyType[] a, AnyType x) {
+
+        int low = 0;
+        int high = a.length -1;
+  
+        int mid; 
+        
+        while (low<=high) {
+            mid = (low+high) / 2;
+            System.out.println(mid+" "+a[mid]);
+            if (a[mid].compareTo(x) < 0) { // x is in second half
+                low = mid + 1;
+            } else if (a[mid].compareTo(x) > 0) { // x is in first half
+                high = mid -1;
+            } else {
+                return mid;
+            } 
+        }
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+        Integer[] test = {0,5,10,13,15,23,42,217,1024,4929};
+
+        int index = BinarySearchGenerics.binarySearch(test, 1024);
+    }
+
+}
+			</code>			
+		</pre>
+
+	<h4>Factorial</h4>
+	<pre>
+		<code class ="java">
+public class Factorial {
+
+
+	public static int factorial(int x) {
+
+		// Base Case
+		if(x==0) {
+			return 1;
+		}
+
+
+		// Recursive call
+		return x * factorial(x-1);
+
+	}
+
+}
+public class Factorial {
+
+
+	public static int factorial(int x) {
+
+		// Base Case
+		if(x==0) {
+			return 1;
+		}
+
+
+		// Recursive call
+		return x * factorial(x-1);
+
+	}
+
+}
+		</code>		
+	</pre>
+	
+	<h4>Fibbonacci</h4>	
+		<pre>
+			<code class ="java">
+public class Fib {
+
+	public static int fib(int x) {
+
+		// Base case
+		if(x==0 || x==1) {
+			return 1;
+		}
+
+		// Recursive call
+		return fib(x-1) + fib(x-2);
+
+
+	}
+
+
+	public static final void main(String[] args) {
+
+		int x = Integer.parseInt(args[0]);
+
+		System.out.println(fib(x));
+
+	}
+
+}
+
+			</code>			
+		</pre>
+
+	<h4>Person</h4>
+	<pre>
+		<code class ="java">
+public class Person implements Comparable<Person> {
+
+    private String firstName;
+    private String lastName;
+
+    public Person(String last, String first) {
+        lastName = last;
+        firstName = first;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        int lastNameComp = lastName.compareTo(other.lastName);
+        if (lastNameComp == 0)
+            return firstName.compareTo(other.firstName);
+        else 
+            return lastNameComp;
+    }
+
+    @Override
+    public String toString() {
+        return firstName+" "+lastName;
+    }
+
+}
+		</code>		
+	</pre>
+
+	<h4>Tower of Hanoi</h4>
+		<pre>
+			<code class ="java">
+// Towers of Hanoi program
+// command line argument is number of disks to be moved
+
+public class towerwithcount
+{
+
+public  static void tower(char from, char to, char spare, int disk)
+{  
+
+    if (disk>0){
+	tower(from, spare, to,disk-1);
+	count++;
+	System.out.println("move disk " + disk + " from " + from + " to " + to);
+	tower(spare, to , from, disk-1);
+    }
+}
+    static int count=0;
+
+
+public static void main(String[] args)
+{
+ 
+   int disk,i;
+   disk=Integer.parseInt(args[0]);
+   System.out.println("Towers of Hanoi for " + disk + " disks:");
+   tower('A','C','B',disk);
+   System.out.println("Number of moves = " + count);
+
+}
+}
+			</code>			
+		</pre>
+
+</body>	
+</html>
